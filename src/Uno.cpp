@@ -575,6 +575,14 @@ void Game::printCard(const Card& card) const {
 
 // Print cards
 void Game::printCards(std::vector<Card> cards) const {
+	
+	// Print 6 blank lines (same height as the cards) if there are no cards
+	
+	if (cards.size() == 0) {
+		std::wcout << "\n\n\n\n\n\n";
+		return;
+	}
+
 	std::array<std::wstring, 6> lines;
 
 	// Sort by color, then value
